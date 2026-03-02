@@ -46,7 +46,6 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 
 # Local bin
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.fzf/bin"
 export PATH="$PATH:$HOME/Bin"
 
 # Machine-specific config (secrets, local paths — not committed)
