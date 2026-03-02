@@ -29,9 +29,16 @@ if command -v pyenv &>/dev/null; then
   eval "$(pyenv init --path)"
 fi
 
-# fzf
+# fzf — --zsh flag requires 0.48.0+; fall back to system scripts on older versions
 if command -v fzf &>/dev/null; then
-  source <(fzf --zsh)
+  _fzf_minor=$(fzf --version | cut -d' ' -f1 | cut -d. -f2)
+  if [[ $_fzf_minor -ge 48 ]]; then
+    source <(fzf --zsh)
+  else
+    [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+    [ -f /usr/share/doc/fzf/examples/completion.zsh ]   && source /usr/share/doc/fzf/examples/completion.zsh
+  fi
+  unset _fzf_minor
 fi
 
 # Node memory
@@ -39,6 +46,7 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 
 # Local bin
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.fzf/bin"
 export PATH="$PATH:$HOME/Bin"
 
 # Machine-specific config (secrets, local paths — not committed)
