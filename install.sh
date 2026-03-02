@@ -28,6 +28,12 @@ else
   echo "  oh-my-zsh already installed"
 fi
 
+echo "==> Installing fzf from source (system apt version too old for --zsh)"
+if [ ! -d "$HOME/.fzf" ]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/.fzf"
+fi
+"$HOME/.fzf/install" --bin
+
 echo "==> Installing tmux plugin manager (if not present)"
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"

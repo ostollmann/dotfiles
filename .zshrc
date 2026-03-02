@@ -44,7 +44,8 @@ fi
 # Node memory
 export NODE_OPTIONS="--max-old-space-size=8192"
 
-# Local bin
+# Local bin — fzf prepended so it shadows the system apt version (too old for --zsh)
+export PATH="$HOME/.fzf/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/Bin"
 
