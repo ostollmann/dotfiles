@@ -48,6 +48,5 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 export PATH="$HOME/.fzf/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/Bin"
+export COLORTERM=truecolor
 
-# Machine-specific config (secrets, local paths — not committed)
-[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
