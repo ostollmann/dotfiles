@@ -50,3 +50,5 @@ export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/Bin"
 export COLORTERM=truecolor
 
+# Prompt — single-line, host-color-coded. Loaded last so it overrides OMZ theme.
+[ -f "$HOME/.prompt.zsh" ] && source "$HOME/.prompt.zsh"

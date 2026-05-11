@@ -19,6 +19,7 @@ echo "==> Symlinking dotfiles"
 symlink .gitconfig
 symlink .tmux.conf
 symlink .zshrc
+symlink .prompt.zsh
 symlink .config/git/ignore
 
 echo "==> Installing oh-my-zsh (if not present)"
