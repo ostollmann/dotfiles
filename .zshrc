@@ -48,7 +48,12 @@ export NODE_OPTIONS="--max-old-space-size=8192"
 export PATH="$HOME/.fzf/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/Bin"
+export PATH="$PATH:$HOME/Repos/apx-devboxes/bin"
 export COLORTERM=truecolor
 
 # Prompt — single-line, host-color-coded. Loaded last so it overrides OMZ theme.
 [ -f "$HOME/.prompt.zsh" ] && source "$HOME/.prompt.zsh"
+
+# Machine-specific config
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
+
