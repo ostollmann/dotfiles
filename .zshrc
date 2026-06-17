@@ -51,6 +51,18 @@ export PATH="$PATH:$HOME/Bin"
 export PATH="$PATH:$HOME/Repos/apx-devboxes/bin"
 export COLORTERM=truecolor
 
+if [ -n "$SSH_AUTH_SOCK" ] && [ -S "$SSH_AUTH_SOCK" ]; then
+    mkdir -p "$HOME/.ssh"
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
+    export SSH_AUTH_SOCK="$HOME/.ssh/ssh_auth_sock"
+
+    if [ -n "$TMUX" ]; then
+      tmux set-environment -g SSH_AUTH_SOCK "$SSH_AUTH_SOCK"
+    fi
+fi
+
+
+
 # Prompt — single-line, host-color-coded. Loaded last so it overrides OMZ theme.
 [ -f "$HOME/.prompt.zsh" ] && source "$HOME/.prompt.zsh"
 
