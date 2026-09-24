@@ -18,6 +18,7 @@ symlink() {
 echo "==> Symlinking dotfiles"
 symlink .gitconfig
 symlink .tmux.conf
+symlink .config/herdr/config.toml
 symlink .zshrc
 symlink .prompt.zsh
 symlink .config/git/ignore

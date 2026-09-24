@@ -1,0 +1,24 @@
+diff --git a/.config/herdr/config.toml b/.config/herdr/config.toml
+new file mode 100644
+index 0000000..2ddbf76
+--- /dev/null
++++ b/.config/herdr/config.toml
+@@ -0,0 +1,5 @@
++onboarding = false
++
++[keys]
++prefix = "ctrl+a"
++split_vertical = "prefix+backslash"
+diff --git a/install.sh b/install.sh
+index 99c02b1..3fc3314 100755
+--- a/install.sh
++++ b/install.sh
+@@ -18,6 +18,7 @@ symlink() {
+ echo "==> Symlinking dotfiles"
+ symlink .gitconfig
+ symlink .tmux.conf
++symlink .config/herdr/config.toml
+ symlink .zshrc
+ symlink .prompt.zsh
+ symlink .config/git/ignore
+
